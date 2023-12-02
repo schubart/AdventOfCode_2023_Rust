@@ -4,3 +4,11 @@ resolver = "2"
 members = [
     "day*",
 ]
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+nursery = "warn"

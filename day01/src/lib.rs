@@ -1,5 +1,4 @@
 #![cfg(test)]
-#![warn(clippy::all, clippy::pedantic, unsafe_code)]
 
 use std::collections::HashMap;
 
