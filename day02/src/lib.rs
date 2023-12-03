@@ -12,7 +12,7 @@ fn solve1() -> usize {
                 "red" => count <= 12,
                 "green" => count <= 13,
                 "blue" => count <= 14,
-                _ => true,
+                _ => false,
             });
 
             plausible.then_some(id)
@@ -31,8 +31,7 @@ fn solve2() -> usize {
 // Parse a line, return the game ID and the maximum count of each color seen in the game.
 fn max_counts(line: &str) -> (usize, HashMap<&str, usize>) {
     let mut parts = line.split(&[':', ',', ';', ' '][..]);
-    parts.next(); // Ignore "Game".
-    let id = parts.next().unwrap().parse().unwrap();
+    let id = parts.nth(1).unwrap().parse().unwrap();
 
     let mut samples = HashMap::new();
 
